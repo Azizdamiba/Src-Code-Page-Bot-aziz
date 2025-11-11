@@ -14,11 +14,14 @@ module.exports = {
     }
 
     try {
-      const apiUrl = `https://fuku-api-v4-2-p6ik.onrender.com/ask?prompt=${encodeURIComponent(message)}`;
+      // REMPLACER CETTE URL PAR VOTRE NOUVELLE API
+      const apiUrl = `https://VOTRE-NOUVELLE-API.com/endpoint?query=${encodeURIComponent(message)}`;
+      
       const response = await axios.get(apiUrl);
 
-      // Extraction de la réponse
+      // ADAPTER CETTE PARTIE SELON LA STRUCTURE DE RÉPONSE DE LA NOUVELLE API
       const reply = response.data?.response?.trim() || 
+                   response.data?.answer?.trim() ||
                    response.data?.content?.trim() || 
                    response.data?.trim() || 
                    response.data;
